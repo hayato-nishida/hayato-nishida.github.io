@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+@mixin font-size($size: 24){
+    font-size: $size + px;
+    font-size: ($size / 10) * 1rem;
+}
+
+$ja : "ヒラギノ角ゴシックW0";
+$en : "dystopian", sans-serif;
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: $ja;
+    color: #383737;
+    background-image: url("../images/portfolio_backimage.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    }
+
+h2{
+    font-family: $en;
+    font-style: normal;
+    font-weight: 300;
+    @include font-size(20);
+    text-align: center;
+}
+a:hover{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
+.two-container{
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5% 5% 0 5%;
+}
+
+.left-container{
+    background-image: url("../images/portfolio_container.jpg");
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 2%;
+    margin: 1%;
+
+    h1{
+        width: 100%;
+
+        img{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 40px 12%;
+        }
+    }
+
+    .image-info{
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0 0 0 5%;
+
+        img{
+            display: block;
+            width: 30%;
+            height: 30%;
+            box-sizing: border-box;
+            padding: 3%;
+            margin: auto;
+        }
+
+        p{
+            display: block;
+            width: 70%;
+            box-sizing: border-box;
+            padding: 4% 0 4% 9%;
+            line-height: 18px;
+            letter-spacing: 2px;
+            margin: auto;
+            @include font-size(12);
+        }
+
+    }
+
+    .contact{
+         margin: 40px 0 50px 0;
+
+         .contact_icon{
+             display: flex;
+             justify-content: center;
+             margin: 12px 0 0 0;
+
+             a{
+                 color: #383737;
+                 @include font-size(25);
+                 margin: 0 12px;
+
+             }
+         }
+        }
+
+        .skill{
+
+            .skill_container{
+                display: flex;
+                box-sizing: border-box;
+                margin: 20px 0 20px 0;
+
+                .skill_box{
+                    display:block;
+                    width: 50%;
+                    box-sizing: border-box;
+                    padding: 0 0 0 5%;
+
+                    li{
+                        list-style: none;
+                        line-height: 30px;
+                        @include font-size(12);
+
+
+                        p{
+                            display: inline;
+                            color: lighten(#383737, 30%);
+                            @include font-size(10);
+                            line-height: 12px;
+                        }
+                    }
+
+                    .supplement{
+                            color: lighten(#383737, 30%)
+                        }
+                }
+            }
+
+        }
+}
+
+.right-container{
+    background-image: url("../images/portfolio_container.jpg");
+    box-sizing: border-box;
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 4%;
+    margin: 1%;
+
+
+    .work_image{
+        width: 100%;
+        margin: 20px 0 0 0;
+        text-align: center;
+
+        img{
+            width: 90%;
+            height: 90%;
+            box-sizing: border-box;
+            margin: 0 0 40px 0;
+            box-shadow: 10px 10px 30px rgba(18, 47, 61, 0.5),
+                        -10px -10px 30px rgba(248, 253, 255, 0.9),
+        }
+    }
+
+}
+
+footer{
+    p{
+        text-align: center;
+        padding: 15px 0 20px 0;
+    }
+}
+
+@media(max-width:549px){
+    .two-container{
+        flex-direction: column;
+    }
+
+    .left-container{
+        width: 100%;
+        margin: 1% 1% 5% 1%;
+
+        .image-info{
+        p{
+            @include font-size(10);
+        }
+    }
+
+        .skill{
+            .skill_container{
+                    flex-direction: column;
+
+                    .skill_box{
+                        width: 100%;
+                        text-align: center;
+                        padding: 0;
+
+                        li{
+                            line-height: 20px;
+                        }
+
+                    }
+            }
+        }
+    }
+
+    .right-container{
+        width: 100%;
+
+        h2{
+            padding: 10px 0 0 0;
+        }
+    }
+
+    }
